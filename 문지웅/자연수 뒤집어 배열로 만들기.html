@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+	<script>
+
+		function solution(n) {
+			var answer = [];
+			let temp = n.toString().split("").reverse(); // 문자열로 만들어서 뒤집기
+			for (num in temp) {
+				answer.push(parseInt(temp[num])); // 숫자로 바꾸어서 배열에 하나씩 추가
+			}
+			return answer;
+		}
+
+	</script>
+</body>
+
+</html>

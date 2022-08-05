@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+	<script>
+
+		function solution(s) {
+			let answer = '';
+			let temp = s.split(" ").map(
+				(word) => word.split("").map(
+					(c, index) => index % 2 == 0 ? c.toUpperCase() : c.toLowerCase()).join("")
+			);
+			answer = temp.join(" ");
+
+			return answer;
+		}
+	</script>
+</body>
+
+</html>
