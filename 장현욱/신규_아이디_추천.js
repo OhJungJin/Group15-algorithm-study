@@ -8,6 +8,6 @@ const solution = (new_id) => {
         .replace(/^\.|\.$/g, '')
         .padEnd(1, 'a')
         .slice(0, 15)
-        .replace(/^\.|\.$/g, '')
+        .replace(/\.$/g, '')
     return id.padEnd(3, id[id.length-1])
 }
