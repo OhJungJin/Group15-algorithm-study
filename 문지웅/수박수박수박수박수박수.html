@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+	<div>
+		<h2>문제 설명</h2>
+		<p>길이가 n이고, "수박수박수박수...."와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 "수박수박"을 리턴하고 3이라면 "수박수"를 리턴하면
+			됩니다.</p>
+		<h3>제한 조건</h3>
+		<p>n은 길이 10,000 이하인 자연수입니다.</p>
+		<h3>입출력 예시</h3>
+		<p>
+			n: 3 -> return "수박수"
+			n: 4 -> return "수박수박"
+		</p>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script>
+
+
+		$(document).ready(function () {
+			console.log(solution(3));
+			console.log(solution(4));
+		});
+		// 이곳에 프로그래머스 코드를 복사붙여넣기하여 문제를 풀어주세요.
+		// 문제를 풀 때는 Consle 창을 활용하여주세요.
+		// html 명은 문제 명으로 변경 후 진행해주세요.
+		function solution(n) {
+			var answer = '';
+			let subak = "수박"
+			if (n % 2 == 1) {
+				answer = subak.repeat(n / 2) + "수"
+			} else {
+				answer = subak.repeat(n / 2)
+			}
+			return answer;
+		}
+	</script>
+</body>
+
+</html>
