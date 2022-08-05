@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<script>
+			function solution(n) {
+				var answer = [];
+				var numList = (n + "").split("").reverse();
+				for (let i = 0; i < numList.length; i++) {
+					console.log(numList[i]);
+					answer[i] = parseInt(numList[i]);
+				}
+				return answer;
+			}
+
+			console.log(solution(123));
+		</script>
+	</body>
+</html>

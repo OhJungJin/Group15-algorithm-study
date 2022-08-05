@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<script>
+			function solution(n) {
+				let answer = 0;
+				let numSplit = (n + "").split("");
+
+				for (let i = 0; i < numSplit.length; i++) {
+					answer += parseInt(numSplit[i]);
+				}
+				return answer;
+			}
+		</script>
+	</body>
+</html>
