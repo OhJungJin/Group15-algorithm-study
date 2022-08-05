@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+	<script>
+
+		function solution(a, b) {
+			var answer = '';
+			let days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+			let week = ["THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"];
+			let dayCount = 0;
+			for (let i = 0; i < a - 1; i++) {
+				dayCount += days[i]
+			}
+			dayCount = dayCount + b;
+			result = dayCount % 7;
+
+			answer = week[result];
+
+			return answer;
+		}
+	</script>
+</body>
+
+</html>
