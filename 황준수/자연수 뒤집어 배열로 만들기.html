@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(n) {
+
+        let answer = Array.from(String(n)).reverse();
+        for (let i = 0; i < answer.length; i++) {
+            answer[i] = Number(answer[i])
+        }
+        return answer;
+    }
+
+    function solution2(n) {
+
+        let answer = Array.from(String(n)).reverse();
+        answer = answer.map((num) => Number(num))
+
+
+        return answer;
+    }
+</script>
+</body>
+</html>
