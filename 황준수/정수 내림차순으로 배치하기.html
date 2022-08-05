@@ -3,8 +3,7 @@
 <body>
 <script>
     function solution(n) {
-        let answer = Array.from(String(n))
-        answer.sort((a, b) => {
+        let answer = Array.from(String(n)).sort((a, b) => {
             return b - a;
         })
         return Number(answer.join(""))
