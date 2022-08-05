@@ -4,21 +4,25 @@
 <script>
     function solution(s) {
         let answer = ''
-        let index = 0
+        let index = 0;
         s = s.toLowerCase()
-        for (let i = 0; i < s.length; i++) {
-            if (s[i] === " ") {
-                answer += s[i]
-                index = 0
-                continue
+
+        for (const ch of s) {
+            if (ch === " ") {
+                index = 0;
+                answer += ch;
+                continue;
             }
+
             if (!(index % 2)) {
-                answer += s[i].toUpperCase()
+                answer += ch.toUpperCase();
             } else {
-                answer += s[i]
+                answer += ch
             }
-            index++
+
+            index++;
         }
+
         return answer
     }
 </script>
