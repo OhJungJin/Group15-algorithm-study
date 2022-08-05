@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(n) {
+        let answer = Array.from(String(n))
+        answer.sort((a, b) => {
+            return b - a;
+        })
+        return Number(answer.join(""))
+    }
+</script>
+</body>
+</html>
