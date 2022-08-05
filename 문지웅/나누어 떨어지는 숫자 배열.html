@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+	<script>
+
+		function solution(arr, divisor) {
+			let answer = [];
+
+			arr.forEach(
+				num => {
+					if (num % divisor == 0) {
+						answer.push(num)
+
+					}
+				}
+			)
+
+			if (answer.length == 0) {
+				return [-1];
+			}
+			answer.sort(function (a, b) {
+				return a - b;
+			});
+
+			return answer;
+		}
+	</script>
+</body>
+
+</html>
