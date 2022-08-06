@@ -33,5 +33,5 @@ function solution(n) {
   // return (n+"").split("").reduce((acc, curr) => acc + parseInt(curr), 0)
 }
 
-console.log(solution(123));
-console.log(solution(987));
+console.log(solution(123)); // 6
+console.log(solution(987)); // 24

@@ -21,5 +21,5 @@ function solution(n) {
   // return answer = "수박".repeat(n).slice(0, n);
 }
 
-console.log(solution(3));
-console.log(solution(4));
+console.log(solution(3)); // "수박수"
+console.log(solution(4)); // "수박수박"
