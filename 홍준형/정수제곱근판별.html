@@ -3,10 +3,9 @@
   <body>
     <script>
       function solution(n) {
-        return +[...n.toString()]
-          .sort((a, b) => b - a)
-          .map((el) => +el)
-          .join("");
+        return Math.sqrt(n) === Math.floor(Math.sqrt(n))
+          ? Math.pow(Math.sqrt(n) + 1, 2)
+          : -1;
       }
     </script>
   </body>
