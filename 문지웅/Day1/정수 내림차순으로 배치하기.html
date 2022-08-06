@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+	<script>
+
+		function solution(n) {
+			let answer = 0;
+			let temp = n.toString().split("").sort((a, b) => b - a); // 문자열로 만들어서 내림차순으로 정렬
+			temp = temp.join("") // 문자열 합치기
+			answer = Number(temp);// 문자열을 숫자로
+			return answer;
+		}
+
+	</script>
+</body>
+
+</html>

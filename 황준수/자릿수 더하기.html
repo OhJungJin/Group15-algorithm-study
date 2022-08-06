@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(n) {
+        let answer = 0;
+        let str = String(n)
+
+        for (let i = 0; i < str.length; i++) {
+            answer += Number(str[i])
+        }
+        return answer;
+    }
+
+    function solution2(n) {
+        let answer = 0;
+        [...String(n)].forEach((num) => {
+            answer += Number(num)
+        })
+        return answer;
+    }
+</script>
+</body>
+</html>

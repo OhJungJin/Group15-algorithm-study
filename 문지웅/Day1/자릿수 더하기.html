@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+	<script>
+
+		function solution(n) {
+			let answer = 0;
+			while (n != 0) {//0이 아니면 반복
+
+				answer += (Math.floor(n % 10));// 10으로 나눈 나머지만 더하기 (소숫점 버리기)
+				n = n / 10; // 한 번 더하면 10분의 1로 축소시키기
+			}
+			return answer;
+		}
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(s) {
+        let answer = ''
+        let index = 0;
+        s = s.toLowerCase()
+
+        for (const ch of s) {
+            if (ch === " ") {
+                index = 0;
+                answer += ch;
+                continue;
+            }
+
+            if (!(index % 2)) {
+                answer += ch.toUpperCase();
+            } else {
+                answer += ch
+            }
+
+            index++;
+        }
+
+        return answer
+    }
+</script>
+</body>
+</html>

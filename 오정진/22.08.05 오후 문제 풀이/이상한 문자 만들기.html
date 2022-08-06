@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+		<script>
+			function solution(s) {
+				let answer = [];
+				let wordSplit = s.split(" ");
+				for (let i = 0; i < wordSplit.length; i++) {
+					let wordList = wordSplit[i]
+						.split("")
+						.map((word, index) => {
+							if (index % 2 == 0) {
+								return word.toUpperCase();
+							} else {
+								return word.toLowerCase();
+							}
+						})
+						.join("");
+					console.log(wordList);
+					answer.push(wordList);
+				}
+				return answer.join(" ");
+			}
+			var s = "try hello world";
+			console.log(solution(s));
+		</script>
+	</body>
+</html>
