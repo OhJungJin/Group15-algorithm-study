@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(numbers) {
+        let answer = new Set()
+        for (let i = 0; i < numbers.length; i++) {
+            for (let j = i; j < numbers.length; j++) {
+                if (i != j) answer.add(numbers[i] + numbers[j])
+            }
+        }
+
+        return (Array.from(answer).sort((a, b) => a - b))
+    }
+</script>
+</body>
+</html>

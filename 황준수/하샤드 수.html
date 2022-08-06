@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(x) {
+        let sum = [...String(x)].map((num) => +num).reduce(((a, b) => a + b), 0)
+        return (x % sum === 0)
+    }
+</script>
+</body>
+</html>
