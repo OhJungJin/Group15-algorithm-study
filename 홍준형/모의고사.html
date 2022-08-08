@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(answers) {
+        const soopoja = [
+          [1, 2, 3, 4, 5],
+          [2, 1, 2, 3, 2, 4, 2, 5],
+          [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
+        ];
+
+        const hashMap = new Map();
+        for (let i = 1; i <= soopoja.length; i++) {
+          hashMap.set(i, 0);
+        }
+
+        answers.forEach((answer, idx) => {
+          soopoja.forEach((soopo, i) => {
+            if (soopo[idx % soopo.length] === answer) {
+              hashMap.set(i + 1, hashMap.get(i + 1) + 1);
+            }
+          });
+        });
+        // console.log(hashMap);
+        // console.log([...hashMap.entries()])
+        // console.log([...hashMap.entries()].sort((a,b)=>b[1]-a[1]))
+        // console.log([...hashMap.entries()]
+        //             .sort((a,b)=>b[1] - a[1])
+        //             .filter((item,_,array)=>item[1] === array[0][1]))
+        // console.log([...hashMap.entries()]
+        //             .sort((a,b)=>b[1] - a[1])
+        //             .filter((item,_,array)=>item[1] === array[0][1])
+        //             .flatMap(item=>item[0]))
+        return [...hashMap.entries()]
+          .sort((a, b) => b[1] - a[1])
+          .filter((item, _, array) => item[1] === array[0][1])
+          .flatMap((item) => item[0]);
+      }
+    </script>
+  </body>
+</html>

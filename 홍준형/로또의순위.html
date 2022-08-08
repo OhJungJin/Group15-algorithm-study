@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(lottos, win_nums) {
+        let rank = [6, 6, 5, 4, 3, 2, 1];
+        let cnt = 0;
+        let zero = lottos.filter((el) => el === 0).length;
+
+        lottos.forEach((lotto) => {
+          if (win_nums.includes(lotto)) cnt++;
+        });
+
+        return [rank[cnt + zero], rank[cnt]];
+      }
+    </script>
+  </body>
+</html>

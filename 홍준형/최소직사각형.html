@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(sizes) {
+        let garo = [];
+        let sero = [];
+
+        sizes
+          .map((size) => {
+            return size.sort((a, b) => b - a);
+          })
+          .forEach((size) => {
+            garo.push(size[0]);
+            sero.push(size[1]);
+          });
+
+        garo.sort((a, b) => b - a);
+        sero.sort((a, b) => b - a);
+
+        return garo[0] * sero[0];
+      }
+    </script>
+  </body>
+</html>
