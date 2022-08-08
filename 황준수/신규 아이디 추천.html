@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution2(new_id) {
+        let regax = /[a-zA-Z0-9._-]/
+        // 1단계
+        new_id = new_id.toLowerCase()
+
+        // 2단계
+        new_id = [...new_id].filter((ch) => regax.test(ch))
+
+        // 3단계
+        new_id = new_id.filter((ch, idx, array) => {
+            if (array[idx] == "." && array[idx + 1] == ".") return false
+            return true
+        })
+        // 4단계
+        new_id = new_id.filter((ch, idx, array) => {
+            if ((idx === 0 || idx === array.length - 1) && ch == '.') return false
+            return true
+        })
+
+        // 5단계
+        new_id = (new_id.length === 0) ? ['a'] : new_id
+
+        // 6단계
+        new_id = (new_id.length >= 16) ? new_id.slice(0, 15) : new_id
+        if (new_id[new_id.length - 1] === ".") new_id.pop()
+
+        // 7단계
+        new_id = new_id.join("")
+        while (new_id.length < 3) {
+            new_id += new_id[new_id.length - 1]
+        }
+
+        return new_id
+    }
+
+    // use RegExp
+    function solution(new_id) {
+        let regax = /[^a-zA-Z0-9._-]/g
+
+        new_id = new_id.toLowerCase()
+            .replace(regax, "")
+            .replace(/\.+/g, ".")
+            .replace(/^\.|\.$/, "")
+            .replace(/^$/, "a")
+            .slice(0, 15)
+            .replace(/\.$/, "")
+        return (new_id.length < 3) ? new_id + new_id[new_id.length - 1].repeat(3 - new_id.length) : new_id
+    }
+
+    //https://heropy.blog/2018/10/28/regexp/
+    //https://hanamon.kr/javascript-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EA%B0%9C%EB%85%90%ED%8E%B8/
+</script>
+</body>
+</html>
