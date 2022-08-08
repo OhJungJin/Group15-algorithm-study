@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(s, n) {
+        let answer = [...s].map((el) => {
+          if (el === " ") return el;
+          const ascii = el.charCodeAt();
+          return el.toUpperCase().charCodeAt() + n > 90
+            ? String.fromCharCode(ascii + n - 26)
+            : String.fromCharCode(ascii + n);
+        });
+        return answer.join("");
+      }
+    </script>
+  </body>
+</html>

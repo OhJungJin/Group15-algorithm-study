@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(new_id) {
+        let newId = new_id
+          .toLowerCase() // 1단계 소문자치환
+          .replace(/[^\w\.\-]/g, "") // 2단계
+          // [xy] // 문자 선택을 표현, x와 y중에 하나를 의미함.
+          // [^xy] : not을 의미함, x및 제외한 문자를 의미함.
+          // \w : word를 표현 / 알파벳 + 숫자 + _ 중의 한 문자임을 의미함.
+          // \. , \- :  .와 - 표현
+          // g : global을 표현, 문자열 내에 모든 패턴들을 검색함.
+          // 해석하면, 알파벳, 숫자, _ 와 -  그리고 .이 아닌 문자열은 ''로 치환한다.
+
+          .replace(/[\.]{2,}/g, ".") // 3단계
+          // [\.] .가
+          // {2,} 2 개 이상 ~ {2,3}이면 2개이상 3개이하
+          // 즉 .가 2개 이상 있는 경우 하나의 마침표로 치환
+
+          .replace(/^\./, "") // 4단계
+          // /^x 문자열 시작을 의미함.
+          .replace(/\.$/, "");
+        // /x$/ 문자열 끝을 의미함.
+
+        if (!newId) {
+          // 5단계
+          newId = "a";
+        }
+
+        if (newId.length >= 16) {
+          //6단계
+          newId = newId.slice(0, 15).replace(/\.$/, ""); // 끝에 마침표가 있다면 제거
+        }
+        if (newId.length <= 2) {
+          // 7단계
+          newId = newId.padEnd(3, newId[newId.length - 1]);
+        }
+        return newId;
+      }
+    </script>
+  </body>
+</html>
