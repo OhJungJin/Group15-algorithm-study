@@ -1,4 +1,11 @@
-function solution(arr) {
-  //필터 함수 이용해서 i번쨰와 i+1번째 변수의 값이 다른 경우만 남기기
+function solution1(arr) {
+  var answer = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[i + 1]) answer.push(arr[i]);
+  }
+  return answer;
+}
+
+function solution2(arr) {
   return arr.filter((num, index) => num != arr[index + 1]);
 }
