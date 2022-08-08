@@ -20,5 +20,5 @@ function solution(a, b) {
   return day.toUpperCase();
 }
 
-console.log(solution(5, 24));
-console.log(solution(1, 1));
+console.log(solution(5, 24)); // "TUE"
+console.log(solution(1, 1)); // "FRI"

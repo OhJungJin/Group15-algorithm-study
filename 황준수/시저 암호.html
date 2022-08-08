@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(s, n) {
+        let regax = /[a-zA-Z]/
+        let answer = ""
+        for (let i = 0; i < s.length; i++) {
+            if (regax.test(s[i])) {
+                let ascii = s.charCodeAt(i) + n
+
+                if (s.charCodeAt(i) < 91 && ascii > 96) ascii -= 26
+                else if (ascii > 122) ascii -= 26
+                else if (ascii > 90 && ascii < 97) ascii -= 26
+
+                answer += (String.fromCharCode(ascii))
+
+            } else {
+                answer += s[i]
+            }
+        }
+        return answer
+    }
+
+    //charCodeAt / fromCharCode
+</script>
+</body>
+</html>
