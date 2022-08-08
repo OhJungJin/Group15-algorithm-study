@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(answers) {
+
+        let person = [[1, 2, 3, 4, 5], [2, 1, 2, 3, 2, 4, 2, 5], [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]]
+        let score = [0, 0, 0]
+
+        for (let i = 0; i < person.length; i++) {
+            for (let j = 0; j < answers.length; j++) {
+                if (person[i][j % person[i].length] === answers[j]) score[i]++;
+            }
+
+        }
+        let bScore = Math.max(...score)
+        let answer = []
+        for (let i = 0; i < score.length; i++) {
+            if (score[i] === bScore) answer.push(i + 1)
+        }
+        return answer
+
+    }
+</script>
+</body>
+</html>

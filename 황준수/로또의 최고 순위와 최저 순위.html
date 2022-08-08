@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(lottos, win_nums) {
+        const lotto = {
+            6: 1,
+            5: 2,
+            4: 3,
+            3: 4,
+            2: 5,
+            1: 6,
+            0: 6,
+        }
+        let count = 0;
+        let zero_count = lottos.filter((num) => num === 0).length
+        win_nums.forEach((num) => {
+            if (lottos.includes(num)) count++;
+        })
+        return [lotto[zero_count + count], lotto[count]]
+    }
+</script>
+</body>
+</html>
