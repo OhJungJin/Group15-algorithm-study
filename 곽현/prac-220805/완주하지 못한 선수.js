@@ -37,6 +37,6 @@ function solution(p, c) {
   // map을 이용해서 다시 풀어보자..
 }
 
-console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"]));
-console.log(solution(["marina", "josipa", "nikola", "vinko", "filipa"], ["josipa", "filipa", "marina", "nikola"]));
-console.log(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]));
+console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"])); // "leo"
+console.log(solution(["marina", "josipa", "nikola", "vinko", "filipa"], ["josipa", "filipa", "marina", "nikola"])); // "vinko"
+console.log(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"])); // "mislav"
