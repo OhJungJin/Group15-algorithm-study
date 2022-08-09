@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(array, commands) {
+
+        let answer = [];
+        commands.map((cmd) => {
+            let arr = array.slice(cmd[0] - 1, cmd[1]).sort((a, b) => a - b);
+            answer.push(arr[cmd[2] - 1]);
+        })
+        return answer
+    }
+</script>
+</body>
+</html>
