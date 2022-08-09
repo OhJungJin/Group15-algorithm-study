@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(n) {
+        // 1부터 n까지의 숫자배열 [1,2,3,4...n-3,n-2,n-1,n]
+        let arr = [...Array(n)].map((v, i) => i + 1);
+
+        // n이 0일 경우, 합은 0이기 떄문에 0을 반환해준다.
+        if (n == 0) return 0;
+        // 1부터 n까지, n을 나눴을 때 나머지가 0이라면 값을 더하고, 아니면 유지
+        else return arr.reduce((acc, cur) => (n % cur === 0 ? acc + cur : acc));
+      }
+    </script>
+  </body>
+</html>
