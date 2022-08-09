@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(n, m) {
+        //유클리드 호제법(반복문)
+        let sn = n;
+        let sm = m;
+        while (m > 0) {
+            let temp = n;
+            n = m
+            m = temp % m;
+        }
+        return [n, sm * sn / n]
+    }
+</script>
+</body>
+</html>
