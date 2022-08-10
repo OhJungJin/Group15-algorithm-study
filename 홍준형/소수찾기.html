@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(n) {
+        // const arr = Array(n+1).fill(true)
+        // arr.splice(0,2,false,false);
+        const arr = [...Array(n + 1)].map((v) => true).fill(false, 0, 2);
+
+        for (let i = 2; i <= n; i++) {
+          if (arr[i]) {
+            for (let j = i * i; j <= n; j += i) {
+              arr[j] = false;
+            }
+          }
+        }
+
+        return arr.filter((v) => v !== false).length;
+      }
+    </script>
+  </body>
+</html>

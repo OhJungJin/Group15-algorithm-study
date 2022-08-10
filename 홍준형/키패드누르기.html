@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(numbers, hand) {
+        const leftNumbers = [1, 4, 7];
+        const rightNumbers = [3, 6, 9];
+        const middleNumbers = [2, 5, 8, 0];
+
+        // 왼쪽,오른쪽 손의 기본 위치 지정
+        let [leftX, leftY] = [0, 3];
+        let [rightX, rightY] = [2, 3];
+
+        const result = numbers.map((number) => {
+          // (middleX - leftX) + (middleY-leftY)
+
+          //숫자가 왼쪽에 있다면
+          if (leftNumbers.includes(number)) {
+            leftX = 0;
+            leftY = leftNumbers.indexOf(number);
+            return "L";
+
+            //숫자가 오른쪽에 있다면
+          } else if (rightNumbers.includes(number)) {
+            rightX = 2;
+            rightY = rightNumbers.indexOf(number);
+            return "R";
+          } else {
+            //숫자가 중간에 있다면 좌우 비교.
+            const middleY = middleNumbers.indexOf(number);
+            const left = 1 - leftX + Math.abs(middleY - leftY);
+            const right = rightX - 1 + Math.abs(rightY - middleY);
+
+            //왼쪽이 오른쪽보다 중간에 가깝다면
+            if (left < right) {
+              leftX = 1;
+              leftY = middleY;
+              return "L";
+
+              //오른쪽이 왼쪽보다 가깝다면
+            } else if (left > right) {
+              rightX = 1;
+              rightY = middleY;
+              return "R";
+            } else {
+              //둘다 일치하면 오른손잡이일 땐 오른쪽, 왼손잡이일땐 왼손을 쓴다.
+              if (hand === "right") {
+                rightX = 1;
+                rightY = middleY;
+                return "R";
+              } else {
+                leftX = 1;
+                leftY = middleY;
+                return "L";
+              }
+            }
+          }
+        });
+
+        return result.join("");
+      }
+    </script>
+  </body>
+</html>

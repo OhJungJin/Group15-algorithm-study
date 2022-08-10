@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(board, moves) {
+        const basket = [];
+        let count = 0;
+
+        //각 뽑기마다
+        moves.forEach((move) => {
+          for (let i = 0; i < board.length; i++) {
+            //board[i]의 [move-1]번째에 인형이 존재한다면
+            if (board[i][move - 1] > 0) {
+              //인형을 뽑고, 그 자리는 0으로 바꾼다
+              const doll = board[i][move - 1];
+              board[i][move - 1] = 0;
+
+              //이 때 바구니에 인형이 들어있고, 바스켓 맨 뒤의 인형이 일치한다면
+              if (basket.length && basket[basket.length - 1] === doll) {
+                //바구니에 든 것을 꺼내고 count를 2증가시킨다.
+                basket.pop();
+                count += 2;
+              } else {
+                //만약 바구니에 인형이 들어있지않거나, 인형이 다르다면 그냥 인형을 넣어준다.
+                basket.push(doll);
+              }
+              break;
+            }
+          }
+        });
+        return count;
+      }
+    </script>
+  </body>
+</html>
