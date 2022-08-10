@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(numbers, hand) {
+        let answer = '';
+        let leftHand = "*";
+        let rightHand = "#";
+        let keypad = {
+            '1': [0, 0], '2': [0, 1], '3': [0, 2],
+            '4': [1, 0], '5': [1, 1], '6': [1, 2],
+            '7': [2, 0], '8': [2, 1], '9': [2, 2],
+            '*': [3, 0], '0': [3, 1], '#': [3, 2]
+        }
+
+        numbers.forEach((number) => {
+            if (number % 3 === 1) {
+                answer += "L";
+                leftHand = "" + number
+            } else if (number !== 0 && number % 3 === 0) {
+                answer += "R";
+                rightHand = "" + number
+            } else {
+                let num = number + ""
+                let distFromRightHand = Math.abs(keypad[num][1] - keypad[rightHand][1]) + Math.abs(keypad[num][0] - keypad[rightHand][0])
+                let distFromLeftHand = Math.abs(keypad[num][1] - keypad[leftHand][1]) + Math.abs(keypad[num][0] - keypad[leftHand][0])
+                if (distFromRightHand < distFromLeftHand) {
+                    answer += "R";
+                    rightHand = num;
+                } else if (distFromRightHand > distFromLeftHand) {
+                    answer += "L";
+                    leftHand = num;
+                } else if (distFromRightHand === distFromLeftHand) {
+                    if (hand === "left") {
+                        answer += "L";
+                        leftHand = num;
+                    } else {
+                        answer += "R";
+                        rightHand = num;
+                    }
+                }
+            }
+        })
+
+
+        return answer;
+    }
+</script>
+</body>
+</html>

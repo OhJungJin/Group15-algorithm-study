@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(n, arr1, arr2) {
+        let secret = [];
+        let answer = [];
+        for (let i = 0; i < n; i++) {
+            secret.push((arr1[i] | arr2[i]).toString(2).padStart(n, 0))
+        }
+        secret.forEach((str) => {
+            let arr = [...str]
+            let key = ""
+            arr.map((ch) => {
+                if (ch === "1") key += "#";
+                else key += " ";
+            })
+            answer.push(key)
+        })
+        return answer
+    }
+</script>
+</body>
+</html>

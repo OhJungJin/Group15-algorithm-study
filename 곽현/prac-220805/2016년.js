@@ -15,10 +15,20 @@
 // 5	24	"TUE"
 
 function solution(a, b) {
-  let day = new Date(2016, a - 1, b).toString().slice(0, 3);
-  
-  return day.toUpperCase();
+  return new Date(2016, a - 1, b).toString().slice(0, 3).toUpperCase();
 }
 
 console.log(solution(5, 24)); // "TUE"
 console.log(solution(1, 1)); // "FRI"
+
+// function solution(a, b) {
+//   let month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+//   let week = ["FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU"];
+//   let sum = b - 1;
+
+//   for (let i = 0; i < a - 1; i++) {
+//     sum += month[i];
+//   }
+
+//   return week[sum % 7];
+// }

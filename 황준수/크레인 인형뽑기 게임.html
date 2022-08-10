@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(board, moves) {
+
+        let basket = []
+        let len = board.length - 1
+        let answer = 0;
+        moves.forEach((move) => {
+            let y = move - 1;
+
+            for (let i = 0; i <= len; i++) {
+                if (board[i][y] != 0) {
+                    if (basket.length != 0 && basket[basket.length - 1] === board[i][y]) {
+                        basket.pop();
+                        answer += 2
+                    } else basket.push(board[i][y]);
+                    board[i][y] = 0;
+                    break;
+                }
+            }
+        })
+
+
+        return answer
+    }
+</script>
+</body>
+</html>
