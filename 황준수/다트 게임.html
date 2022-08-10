@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    function solution(dartResult) {
+
+        let answer = [];
+
+        let score = "";
+        let idx = 0;//현재 점수 인덱스
+        [...dartResult].forEach((ch, index, arr) => {
+            if (/[0-9]/.test(ch)) score += ch;
+            if (/[SDT]/.test(ch)) {
+                if (score != "") score = +score
+                if (ch === "S") score = +score;
+                if (ch === "D") score = (+score) ** 2;
+                if (ch === "T") score = (+score) ** 3;
+
+                if (arr[index + 1] !== "#" && arr[index + 1] !== "*") {
+                    answer.push(score);
+                    score = "";
+                    idx++;
+                }
+            }
+            if (/[*#]/.test(ch)) {
+                if (ch === "#") score = -score;
+                if (ch === "*") {
+                    if (idx === 0) score *= 2;
+                    else {
+                        score *= 2;
+                        answer[idx - 1] *= 2;
+                    }
+                }
+                answer.push(score);
+                score = "";
+                idx++;
+            }
+        })
+        if (score != "") answer.push(score)
+
+        return answer.reduce((a, b) => a + b)
+
+    }
+</script>
+</body>
+</html>
