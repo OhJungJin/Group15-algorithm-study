@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      function solution(nums) {
+        //고를 수 있는 수는 N/2 (항상 짝수)
+        const pick = nums.length / 2;
+
+        // 폰켓몬 중복 제거
+        const monster = [...new Set(nums)];
+
+        // 폰켓몬의 수가 고를 수 있는 것보다 많으면 고를 수 있는 수, 아니면 폰켓몬의 수 만큼 가져간다.
+        return monster.length > pick ? pick : monster.length;
+      }
+    </script>
+  </body>
+</html>
