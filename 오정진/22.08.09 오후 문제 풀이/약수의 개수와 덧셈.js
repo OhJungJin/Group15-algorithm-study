@@ -9,6 +9,5 @@ function solution(left, right) {
 		}
 		answer = cnt % 2 === 0 ? (answer += i) : (answer -= i);
 	}
-
 	return answer;
 }
