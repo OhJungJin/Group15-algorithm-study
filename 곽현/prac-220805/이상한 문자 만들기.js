@@ -28,3 +28,6 @@ function solution(s) {
 
 console.log(solution("try hello world")); // TrY HeLlO WoRlD
 console.log(solution("sparta coding club")); // SpArTa CoDiNg ClUb
+console.log(solution("i love you")); // I LoVe YoU
+console.log(solution("good morning")); // GoOd MoRnInG
+console.log(solution("hello world")); // HeLlO WoRlD

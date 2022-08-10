@@ -27,16 +27,39 @@
 // 예제 #3
 // "mislav"는 참여자 명단에는 두 명이 있지만, 완주자 명단에는 한 명밖에 없기 때문에 한명은 완주하지 못했습니다.
 
-function solution(p, c) {
-  p.sort();
-  c.sort();
+// function solution(p, c) {
+//   p.sort();
+//   c.sort();
 
-  for (let i = 0; i < p.length; i++) {
-    if (p[i] != c[i]) return p[i];
+//   for (let i = 0; i < p.length; i++) {
+//     if (p[i] != c[i]) return p[i];
+//   }
+// }
+
+function solution(participant, completion) {
+  const map = new Map();
+
+  for (let i = 0; i < participant.length; i++) {
+    let a = participant[i],
+      b = completion[i];
+    console.log("참여자: "+a);
+    console.log(map.set(a, (map.get(a) || 0) + 1));
+    console.log("완주자: "+b);
+    console.log(map.set(b, (map.get(b) || 0) - 1));
   }
-  // map을 이용해서 다시 풀어보자..
+
+  for (let [k, v] of map) {
+    if (v > 0) return k;
+  }
 }
 
 console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"])); // "leo"
-console.log(solution(["marina", "josipa", "nikola", "vinko", "filipa"], ["josipa", "filipa", "marina", "nikola"])); // "vinko"
-console.log(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"])); // "mislav"
+console.log(
+  solution(
+    ["marina", "josipa", "nikola", "vinko", "filipa"],
+    ["josipa", "filipa", "marina", "nikola"]
+  )
+); // "vinko"
+console.log(
+  solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"])
+); // "mislav"
